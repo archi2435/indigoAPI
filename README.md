@@ -64,7 +64,7 @@ Add parameter "tabs=False" if you not going load previus browser tabs.
 Add parameter "automation=true" if you going use automation scripts.  
 *Default automation=False*  
 
-    indigo.start_profile(uuid=[uuid], automation=true)  
+    indigo.start_profile(uuid=[uuid], automation=True)  
 
 ***
 
@@ -73,10 +73,11 @@ Add parameter "automation=true" if you going use automation scripts.
 If "automation=true" function return port where launched indigo profile. You can use this port for connection selenium to Indigo.
 
     from selenium import webdriver
+    from selenium.webdriver.firefox import options
 
 
     indigo = IndigoAPI()
-    profile = indigo.start_profile(uuid=[uuid], automation=true)
+    profile = indigo.start_profile(uuid=[uuid], automation=True)
     # port profile == profile['value']
 
     opts = options.DesiredCapabilities()
