@@ -4,7 +4,6 @@ import re
 
 '''
 Python module to easy working with Indigo api
-
 Here both version Indigo api are combined,
 but you can use only api.v1 or api.v2
 '''
@@ -14,7 +13,6 @@ class IndigoAPI_v1():
     '''
     Class for working with Indigo api v1
     where you can contor the profiles (start/stop)
-
     You can start the profile and manage it using the selenium
     '''
     
@@ -24,7 +22,6 @@ class IndigoAPI_v1():
     def start_profile(self, uuid, tabs=True, automation=False):
         '''
         If tabs is true - Indigo launch previus browser tabs
-
         Automation - it's parameter for launch profile to automation software,
         if this parameter is true - return the port on where the profile is running
         '''
@@ -177,6 +174,9 @@ class IndigoAPI_v2():
 
         if notes:
             body['notes'] = notes
+            
+        result = requests.post(self.host + query, json=body)
+        return result # return profile uuid
 
 
 class IndigoAPI(IndigoAPI_v1, IndigoAPI_v2):
