@@ -39,6 +39,7 @@ If yoг're indigo port != 35000, set it when creating an object:
 
     indigo.start_profile()
     indigo.stop_profile()
+    indigo.check_profile()
     indigo.get_profile()
     indigo.create_profile()
     indigo.del_profile()
@@ -89,12 +90,20 @@ If "automation=true" function return port where launched indigo profile. You can
 
 You need set only uuid to stop profile
 
-    indigo_stop_profile(uuid=[uuid])
+    indigo.stop_profile(uuid=[uuid])
     # uuid is required parameter
 
 ***
 
-### 3.5 Get profile
+### 3.5 Check profile
+Check if profile is already running.
+
+    indigo.check_profile(uuid=[uuid])
+    # uuid is required parameter
+
+***
+
+### 3.6 Get profile
 
     indigo.get_profile(uuid=[uuid], group=[group_id], name=[name], notes=[notes])
 
@@ -102,7 +111,7 @@ Use this method for get profile list. You can set some parameters by which the r
 
 ***
 
-### 3.6 Create profile
+### 3.7 Create profile
 
     indigo.create_profile(name=[name], os=[os], 
                           browser=[browser], group=[group_id],
@@ -120,7 +129,7 @@ Use this method for create a new profile in indigo browser. Set pameters to chan
 
 ***
 
-### 3.7 Create profile with proxy
+### 3.8 Create profile with proxy
 
 Use this format when add proxy in profile: "**type:login:password:ip:port**"
 
@@ -136,7 +145,7 @@ You can also use this format "**type:login:password@ip:port**"
 
 ***
 
-### 3.8 Delete profile
+### 3.9 Delete profile
 
 You need set only uuid for delete profile
 
@@ -144,7 +153,7 @@ You need set only uuid for delete profile
 
 ***
 
-### 3.9 Update profile settings
+### 3.10 Update profile settings
 
     indigo.update_profile(self, uuid, name=None, os=None, 
                           browser=None, group=None, googleServices=None, 
@@ -171,6 +180,7 @@ You can use indigo API v1 if you need only control a profiles
 
     indigo.start_profile(uuid)
     indigo.stop_profile(uuid)
+    indigo.check_profile(uuid)
 
 ***
 
